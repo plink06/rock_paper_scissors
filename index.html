@@ -7,32 +7,34 @@
 </head>
 <body>
     <script>
-        const userinput = prompt("lets play rock paper scissors: ").toLowerCase();
+        const getUserChoice = prompt("lets play rock paper scissors: ").toLowerCase();
         
         const game = ["rock","paper","scissor"];
         const randomchoice = Math.floor(Math.random() * game.length);
-        const computerinput = game[randomchoice];
+        const getComputerChoice = game[randomchoice];
 
         function gameresutl(a, b){
             if (a == b){
-                return console.log("its a draw");
+                console.log("its a draw");
             }else if(a == "paper" && b == "rock"){
-                return console.log("you win");
+                console.log("you win");
             }else if(a == "rock" && b == "scissor"){
-                return console.log("you win");
+                console.log("you win");
             }else if(a == "scissor" && b == "paper"){
-                return console.log("you win");
+                console.log("you win");
             }else if(b == "paper" && a == "rock"){
-                return console.log("the computer wins");
+                console.log("the computer wins");
             }else if(b == "rock" && a == "scissor"){
-                return console.log("the computer wins");
+                console.log("the computer wins");
             }else if(a == "scissor" && b == "paper"){
-                return console.log("the computer wins");
+                console.log("the computer wins");
+            }else{
+                console.log("please enter a valid rock paper scissor value");
             }
         };
 
         for(let i = 0; i < 5 ; i++){
-            gameresutl(userinput, computerinput);
+            gameresutl(getUserChoice, getComputerChoice);
         }
         
 
