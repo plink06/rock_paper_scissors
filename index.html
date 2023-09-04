@@ -7,17 +7,30 @@
 </head>
 <body>
     <script>
-        let userinput = prompt("whats your choice: ").toLowerCase();
-        let computerinput = prompt("whats your choice: ")
-        console.log(userinput);
-        function gameresutl(userinput, computerinput){
-            if (userinput.toLowerCase() == rock && computerinput.toLowerCase() == scissor){
-                console.log("you win");
+        const userinput = prompt("lets play rock paper scissors: ").toLowerCase();
+        
+        const game = ["rock","paper","scissor"];
+        const randomchoice = Math.floor(Math.random() * game.length);
+        const computerinput = game[randomchoice];
+
+        function gameresutl(a, b){
+            if (a == b){
+                return console.log("its a draw");
+            }else if(a == "paper" && b == "rock"){
+                return console.log("you win");
+            }else if(a == "rock" && b == "scissor"){
+                return console.log("you win");
+            }else if(b == "paper" && a == "rock"){
+                return console.log("the computer wins");
+            }else if(b == "rock" && a == "scissor"){
+                return console.log("the computer wins");
             }
+        };
+
+        for(let i = 0; i < 5 ; i++){
+            gameresutl(userinput, computerinput);
         }
-
-
-
+        
 
 
 
