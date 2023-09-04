@@ -7,13 +7,11 @@
 </head>
 <body>
     <script>
-        const getUserChoice = prompt("lets play rock paper scissors: ").toLowerCase();
+        
         
         const game = ["rock","paper","scissor"];
-        const randomchoice = Math.floor(Math.random() * game.length);
-        const getComputerChoice = game[randomchoice];
-
-        function gameresutl(a, b){
+        
+        function gameresult(a, b){
             if (a == b){
                 console.log("its a draw");
             }else if(a == "paper" && b == "rock"){
@@ -30,11 +28,24 @@
                 console.log("the computer wins");
             }else{
                 console.log("please enter a valid rock paper scissor value");
+                return 1;
             }
         };
+        const rounds = parseInt(prompt("how many rounds would you like to play sir: "))-1;
+        for(let i = 0; i <= rounds ; i++){
+            const getUserChoice = prompt("lets play rock paper scissors: ").toLowerCase();
+            const randomchoice = Math.floor(Math.random() * game.length);
 
-        for(let i = 0; i < 5 ; i++){
-            gameresutl(getUserChoice, getComputerChoice);
+            function getComputerChoice(b,d){
+                return game[randomchoice];
+            }
+            gameresult(getUserChoice, getComputerChoice(game,randomchoice));
+            //function score(niggalo){
+                
+
+            //}
+
+            
         }
         
 
