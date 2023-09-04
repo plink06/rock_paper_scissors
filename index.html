@@ -15,20 +15,19 @@
             if (a == b){
                 console.log("its a draw");
             }else if(a == "paper" && b == "rock"){
-                console.log("you win");
+                console.log("you win! Paper beats Rock");
             }else if(a == "rock" && b == "scissor"){
-                console.log("you win");
+                console.log("you win! Rock beats Scissor");
             }else if(a == "scissor" && b == "paper"){
-                console.log("you win");
+                console.log("you win! Scissor beats Paper");
             }else if(b == "paper" && a == "rock"){
-                console.log("the computer wins");
+                console.log("You Lose! Paper beats Rock");
             }else if(b == "rock" && a == "scissor"){
-                console.log("the computer wins");
-            }else if(a == "scissor" && b == "paper"){
-                console.log("the computer wins");
+                console.log("You Lose! Rock beats Scissor");
+            }else if(b == "scissor" && a == "paper"){
+                console.log("You Lose! Scissor beats Paper");
             }else{
                 console.log("please enter a valid rock paper scissor value");
-                return 1;
             }
         };
         const rounds = parseInt(prompt("how many rounds would you like to play sir: "))-1;
@@ -39,10 +38,9 @@
             function getComputerChoice(b,d){
                 return game[randomchoice];
             }
+            console.log(getComputerChoice(game,randomchoice));
             gameresult(getUserChoice, getComputerChoice(game,randomchoice));
             //function score(niggalo){
-                
-
             //}
 
             
