@@ -1,4 +1,8 @@
 const game = ["rock","paper","scissor"];
+const btnrock = document.querySelector("#rock");
+const btnpaper = document.querySelector("#paper");
+const btnscissors = document.querySelector("#scissors");
+const scoreoutput = document.querySelector('#output');
 
 function gameresult(a, b){
     if (a == b){
@@ -44,10 +48,18 @@ function keeping_score(a){
     }
 }
 console.log(score);
+btnrock.addEventListener('click',()=>{
+    return 'rock';
+})
+btnpaper.addEventListener('click',()=>{
+    return 'paper';
+})
+btnscissors.addEventListener('click',()=>{
+    return 'scissor';
+})
 
-const rounds = parseInt(prompt("how many rounds would you like to play sir: "))-1;
 function gameround(){  
-    for(let i = 0; i <= rounds ; i++){
+    for(let i = 1; i <= 5 ; i++){
         const getUserChoice = prompt("lets play rock paper scissors: ").toLowerCase();
         const randomchoice = Math.floor(Math.random() * game.length);
 
@@ -64,10 +76,13 @@ console.log(gameround());
 //console.log(score);
 function finaleScore(q){
     if (q>0){
+        scoreoutput.textContent = "you win overall";
         console.log("you win overall")
     }else if (q == 0){
+        scoreoutput.textContent = "its a tie";
         console.log("its a tie")
     }else{
+        scoreoutput.textContent = "the computer wins";
         console.log("the computer wins")
     }
 }
