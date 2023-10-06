@@ -56,7 +56,6 @@ function gameround(x){
                     return b[d];
         }
         const computerChoice = getComputerChoice(game,randomchoice);
-        console.log(gameresult(x,computerChoice));
         keeping_score(gameresult(x,computerChoice));        
 }    
 btnrock.addEventListener('click',()=>{
@@ -73,10 +72,12 @@ btnscissors.addEventListener('click',()=>{
 })
 function finaleScore(q, s){
     if (q == 5){
-        scoreoutput.textContent = "you win overall";
-        //console.log("you win overall")
+        scoreoutput.textContent = `you win 5 to ${s}`;
     }else if (s == 5){
-        scoreoutput.textContent = "the computer wins";
-        //console.log("its a tie")
+        scoreoutput.textContent = `the computer wins 5 to ${q}`;
+    }else if (s < 5 && q < 5){
+        scoreoutput.textContent = `the score is ${q} for you, and ${s} for the computer`
+    }else {
+        scoreoutput.textContent = " stop playing the game is over and i dont wanna think of a way to stop it this is the best i can do"
     }
 }
